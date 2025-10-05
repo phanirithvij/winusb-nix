@@ -1,0 +1,27 @@
+{
+  "nodes": {
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1759654089,
+        "narHash": "sha256-Ydy/SjnYIHqujnFINbM1oWZCo8MnqQQhz+khSmxp1U4=",
+        "owner": "phanirithvij",
+        "repo": "nixpkgs",
+        "rev": "00c839609dc9d444c9998d4a0a7984d22604d7d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "phanirithvij",
+        "ref": "quickemu-patched",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
