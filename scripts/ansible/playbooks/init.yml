@@ -1,0 +1,29 @@
+---
+- name: Manage Windows VM package managers
+  hosts: quickemu_windows
+  gather_facts: no
+  tasks:
+
+    - name: Ensure Chocolatey installed
+      win_shell: |
+        if (!(Get-Command choco -ErrorAction SilentlyContinue)) {
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+        }
+
+    - name: Ensure Scoop installed
+      win_shell: |
+        if (!(Test-Path $env:USERPROFILE\bin\scoop.ps1)) {
+          Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+          iwr -useb get.scoop.sh | iex
+        }
+
+    # No winget collection ansible-collections/community.windows#611
+    - name: Check if Winget installed
+      win_shell: |
+        if (!(Get-Command winget -ErrorAction SilentlyContinue)) {
+          Write-Host "Winget is not installed or not found"
+        } else {
+          Write-Host "Winget is installed"
+        }
+

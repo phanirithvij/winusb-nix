@@ -1,0 +1,56 @@
+# Partially copied from https://github.com/phanirithvij/scoopconf-backups/blob/main/backup.ps1
+# Ideally I need nix devshells in windows, because all of these are garbage that needs to be collected
+---
+- name: setup packages
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: install scoop and git
+      community.windows.win_scoop:
+        name:
+          - git
+    - name: add extras
+      community.windows.win_scoop_bucket:
+        name: extras
+    - name: install few progs
+      community.windows.win_scoop:
+        name:
+          - bat
+          - fzf
+          - jq
+          - navi
+          - micro
+          - starship
+          - ffmpeg
+          #- ffmpeg-shared # slow or something blocks for hours
+          - wget
+          - curl
+          - aria2
+          - 7zip
+    - name: install global progs
+      community.windows.win_scoop:
+        global: true
+        name:
+          - pwsh
+          - sudo
+          - extras/sysinternals
+    - name: install extra progs
+      community.windows.win_scoop:
+        name:
+          - extras/alacritty
+          - extras/crystaldiskinfo
+          - extras/geekuninstaller
+          - extras/lazygit
+          - extras/lockhunter # todo has an equivalent in powetoys now I think
+          - extras/ludusavi
+          - extras/mpv.net
+          - extras/qbittorrent
+          - extras/rufus
+          - extras/sumatrapdf
+          - extras/ventoy
+          - extras/viddy
+          - extras/windirstat
+          - extras/windows-terminal
+          - extras/yacreader
+          - extras/wsl2-distro-manager
+

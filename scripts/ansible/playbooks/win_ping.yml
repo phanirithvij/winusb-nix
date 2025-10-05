@@ -1,0 +1,7 @@
+---
+- name: Verify connectivity to all hosts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Ping target hosts
+      win_ping:
