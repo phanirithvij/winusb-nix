@@ -40,3 +40,16 @@
   - https://github.com/physics-enthusiast/mido-nix
   - https://github.com/phanirithvij/mido-nix
 - https://github.com/ElliotKillick/qvm-create-windows-qube
+- quickemu issues
+  - had to patch quickget
+  - https://github.com/quickemu-project/quickemu/issues/1627
+  - https://github.com/quickemu-project/quickemu/issues/1475#issuecomment-2727231076
+  - https://github.com/quickemu-project/quickemu/issues/1620#issuecomment-2784890164
+  - https://www.reddit.com/r/Windows10/comments/1c3x0nz/replace_w10_by_windows_server_2019/
+  - https://www.reddit.com/r/sysadmin/comments/zevevb/new_server_win19_or_win22/
+  - https://www.reddit.com/r/VFIO/comments/1j6fjlv/pls_help_me_run_a_game_on_utmqemu/
+- https://massgrave.dev/genuine-installation-media
+- qemu issues
+  - https://superuser.com/questions/1671932/unable-to-connect-to-internet-in-windows-10-vm-using-kvm-qemu
+  - https://serverfault.com/questions/324281/how-do-you-increase-a-kvm-guests-disk-space
+  - quickemu solves these
